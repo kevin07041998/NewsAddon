@@ -54,4 +54,8 @@ public class PlayerUtils {
   public void sendAsPlayer(String message) {
     Laby.references().chatExecutor().chat(message);
   }
+
+  public void sendAsPlayerWithoutHistory(String message) {
+    Laby.references().chatExecutor().chat(message, false);
+  }
 }

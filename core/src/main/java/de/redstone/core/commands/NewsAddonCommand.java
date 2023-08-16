@@ -89,24 +89,27 @@ public class NewsAddonCommand extends Command {
           case "2" -> newsAddon.playerUtils.sendAsPlayer(
               "✸ Achtung ✸ Bitte unterlasse das, sonst bekommst du Hausverbot! (Verwarnung 2/2)");
 
-          default -> newsAddon.playerUtils.displayPrefix("§e/newsaddon warn [pvp1,pvp2,pvp3,hv1,hv2,hv3,1,2,3]");
+          default -> newsAddon.playerUtils.displayPrefix(
+              "§e/newsaddon warn [pvp1,pvp2,pvp3,hv1,hv2,hv3,1,2,3]");
         }
-    } /*else if(args[1].equals("scan") || args[1].equals("scanner")) {
-      if(!(args.length > 2)) {
+      }
+    } else if(args[0].equals("scan") || args[0].equals("scanner")) {
+      if(!(args.length >= 2)) {
         newsAddon.playerUtils.displayPrefix("§e/newsaddon scan [Name,stop]");
       } else {
-        if(args[2].equalsIgnoreCase("stop") || (args[2].equalsIgnoreCase(newsAddon.last_scanned_name) && newsAddon.scanner)) {
+        if (args[1].equalsIgnoreCase("stop") || (
+            args[1].equalsIgnoreCase(newsAddon.last_scanned_name) && newsAddon.scanner)) {
           newsAddon.scan_name = null;
           newsAddon.scanner = false;
           newsAddon.playerUtils.displayPrefix("§cScanner aus");
         } else {
-          newsAddon.scan_name = args[2];
+          newsAddon.scan_name = args[1];
           newsAddon.scanner = true;
-          newsAddon.playerUtils.displayPrefix("§aScanne nun " + args[2]);
-          newsAddon.last_scanned_name = args[2];
+          newsAddon.playerUtils.displayPrefix("§aScanne nun " + args[1]);
+          newsAddon.last_scanned_name = args[1];
         }
       }
-    }*/ /*else if(args[1].equals("da") || args[1].startsWith("dauerauftr")) {
+     /*else if(args[1].equals("da") || args[1].startsWith("dauerauftr")) {
       newsAddon.playerUtils.displayPrefix("§aFolgende DAs sind für heute abgespeichert:");
       for(String item : newsAddon.das) {
         newsAddon.playerUtils.displayPrefix("§a" + item);

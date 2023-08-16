@@ -33,6 +33,7 @@ public class Auctions {
     gsTexte.add("Bist du dir bewusst, dass die Auktion anfangs 500€ kostet? Weiterhin fallen 3% vom Gewinn Auktionsgebühr an, sofern die Region versteigert wird.");
     gsTexte.add("Bei einer Grundstücksauktion wird die Auktion im Forum erst veröffentlicht, nachdem das Grundstück an unsere Fraktionsleitung übertragen wurde.");
     gsTexte.add("In welchem Stadtteil befindet sich die Region und wie ist die ID (kau-ID)?");
+    gsTexte.add("Hat dein Grundstück einen aktiven Bebauungshinweis?");
     gsTexte.add("Wie ist der Grundpreis (Staat) und wie hoch sind die Grundsteuern?");
     gsTexte.add("Kennst du die Maße der Region?");
     gsTexte.add("An welchem Tag und zu welcher Uhrzeit soll die Auktion enden? (Maximal bis zum " + latestEnd + ")");
@@ -85,7 +86,7 @@ public class Auctions {
 
   private void doAuction(List<String> msg) {
     addon.playerUtils.displayPrefix("");
-    addon.playerUtils.displayPrefix("§aKlicke nun die Tete für die jeweiligen Auktionstexte an:");
+    addon.playerUtils.displayPrefix("§aKlicke nun die Texte für die jeweiligen Auktionstexte an:");
 
     for(int i = 0; i < msg.size(); i++) {
       addon.playerUtils.clickableCommand("§a" + (i+1) + ". Auktionstext einfügen", msg.get(i), true);
@@ -114,12 +115,14 @@ public class Auctions {
       case "grundstück":
       case "grundstueck":
         doAuction(gsTexte);
+        addon.playerUtils.displayPrefix("§aDie Person muss nun ein entsprechendes Schild mit dem Hinweis auf diese Auktion aufstellen.");
         break;
       case "mie":
       case "mietregion":
       case "mietzone":
       case "werbetafel":
         doAuction(mieTexte);
+        addon.playerUtils.displayPrefix("§aDie Person muss nun ein entsprechendes Schild mit dem Hinweis auf diese Auktion aufstellen.");
         break;
       case "vehicle":
       case "auto":
@@ -132,7 +135,7 @@ public class Auctions {
         addon.playerUtils.displayPrefix("§aDie Person muss dir noch einen Schlüssel geben.");
         break;
       case "biz":
-        doAuction(bizTexte);;
+        doAuction(bizTexte);
         break;
       case "rechner":
       case "r":
