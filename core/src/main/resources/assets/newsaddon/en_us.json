@@ -1,0 +1,10 @@
+{
+  "newsaddon": {
+    "settings": {
+      "name": "NewsAddon",
+      "enabled": {
+        "name": "Aktiv"
+      }
+    }
+  }
+}
