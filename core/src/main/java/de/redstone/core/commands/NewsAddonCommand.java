@@ -20,6 +20,8 @@ public class NewsAddonCommand extends Command {
       newsAddon.playerUtils.displayPrefix("§e/newsaddon §e[help, hv1, hv2, illegal, warn, scan, show, update]");
       newsAddon.playerUtils.displayPrefix("§e/auktion [item, code, gs, mie, auto]");
       newsAddon.playerUtils.displayPrefix("");
+
+      newsAddon.seconds90 = 3;
       return true;
     }
 

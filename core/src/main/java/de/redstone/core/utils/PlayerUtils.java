@@ -16,7 +16,7 @@ public class PlayerUtils {
     this.addon = addon;
   }
 
-  public void displayNormal(ChatMessage message) {
+  public void displayNormal(String message) {
     ChatMessage chatMessage = ChatMessage.builder()
         .component(Component.text(message))
         .visibility(ChatVisibility.SHOWN)

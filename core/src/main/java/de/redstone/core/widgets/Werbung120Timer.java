@@ -30,7 +30,7 @@ public class Werbung120Timer extends TextHudWidget<TimerWidgetConfig> {
   }
 
   public void setTimer(int time) {
-    if (time == 0) {
+    if (time <= 0) {
       timer.updateAndFlush("Erlaubt");
     } else {
       timer.updateAndFlush("Erlaubt in " + time + " Sekunden");

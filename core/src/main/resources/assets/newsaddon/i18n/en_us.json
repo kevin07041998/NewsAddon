@@ -1,0 +1,39 @@
+{
+  "newsaddon": {
+    "settings": {
+      "name": "NewsAddon - DIE SCHEIßE FUNZT NICHT",
+      "enabled": {
+        "name": "Aktiv"
+      },
+      "isSound90": {
+        "name": "Sound bei 90 Sek"
+      },
+      "sound90": {
+        "name": "Sound"
+      },
+      "isSound120": {
+        "name": "Sound bei 120 Sek"
+      },
+      "sound120": {
+        "name": "Sound"
+      },
+      "isSoundDA": {
+        "name": "Sound bei DA"
+      },
+      "soundDA": {
+        "name": "Sound"
+      },
+      "header": {
+        "90": {
+          "name": "90 Sekunden Timer"
+        },
+        "120": {
+          "name": "120 Sekunden Timer"
+        },
+        "DA": {
+          "name": "DA Timer"
+        }
+      }
+    }
+  }
+}

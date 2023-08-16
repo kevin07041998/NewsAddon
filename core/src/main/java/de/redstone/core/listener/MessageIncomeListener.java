@@ -38,8 +38,14 @@ public class MessageIncomeListener {
           .replaceAll("Reperaturbücher", "Reparaturbücher");
 
       try {
+        new Thread( new Runnable() {
+          public void run()  {
+            try  { Thread.sleep( 10 ); }
+            catch (InterruptedException ignored)  {}
+            newsAddon.playerUtils.displayPrefix("§aDer Werbetext wurde in die Zwischenablage kopiert.");
+          }
+        } ).start();
           newsAddon.labyAPI().minecraft().setClipboard(werbetext);
-          newsAddon.playerUtils.displayPrefix("§aDer Werbetext wurde in die Zwischenablage kopiert.");
       } catch (Exception e) {
         e.printStackTrace();
       }
