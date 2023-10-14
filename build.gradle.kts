@@ -7,7 +7,7 @@ plugins {
 group = "org.example"
 version = "1.0.0"
 
-java.toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+java.toolchain.languageVersion.set(JavaLanguageVersion.of(8))
 
 labyMod {
     defaultPackageName = "de.redstone" //change this to your main package name (used by all modules)
