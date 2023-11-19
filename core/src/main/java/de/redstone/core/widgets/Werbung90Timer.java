@@ -24,10 +24,10 @@ public class Werbung90Timer extends TextHudWidget<TimerWidgetConfig> {
     return true;
   }
 
-  @Override
+  /*@Override
   public void updateSize(HudWidgetWidget widget, boolean isEditorContext, HudSize size) {
     size.set(25, 10);
-  }
+  }*/
 
   public void setTimer(int time) {
     if (time <= 0) {

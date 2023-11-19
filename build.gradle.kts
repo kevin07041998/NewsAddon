@@ -16,7 +16,7 @@ labyMod {
         displayName = "NewsAddon"
         author = "RedstoneSpeaker"
         description = "GermanMinerDE-News Addon"
-        minecraftVersion = "*"
+        minecraftVersion = "1.12.2"
         version = System.getenv().getOrDefault("VERSION", "0.0.1")
     }
 
