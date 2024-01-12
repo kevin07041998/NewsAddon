@@ -9,6 +9,7 @@ import java.util.TimerTask;
 
 public class DATimer extends TimerTask {
     NewsAddon newsAddon;
+
     public DATimer(NewsAddon newsAddon) {
         this.newsAddon = newsAddon;
     }

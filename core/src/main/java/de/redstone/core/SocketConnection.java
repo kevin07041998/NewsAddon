@@ -19,9 +19,9 @@ import java.util.Timer;
 public class SocketConnection extends WebSocketClient {
     public static SocketConnection socket;
     public PlayerUtils pUtils;
-    private NewsAddon newsAddon;
     public String token = "";
     public boolean authenticated = false;
+    private final NewsAddon newsAddon;
 
     public SocketConnection(URI serverUri, NewsAddon newsAddon) {
         super(serverUri);
@@ -37,13 +37,13 @@ public class SocketConnection extends WebSocketClient {
 
     @Override
     public void onMessage(String s) {
-        if(s.startsWith("authSuccess")) {
+        if (s.startsWith("authSuccess")) {
             socket.token = s.split(" ")[1];
             socket.authenticated = true;
 
             socket.s("da giveMeAllThousandTimedAdvertisements");
 
-        } else if(s.startsWith("nf ")) {
+        } else if (s.startsWith("nf ")) {
             String user = s.split(" ")[1];
             String message = s.replace("nf " + user + " ", "");
             pUtils.displayNormal("§c§l[N-CHAT] §a" + user + " §7»§f " + message);
@@ -90,14 +90,14 @@ public class SocketConnection extends WebSocketClient {
                     newsAddon.das.add(dateString);
                     System.out.println("[NEWS-DEBUG] registered DA at " + dateString);
                 }
-            } catch (Exception ignored) { }
+            } catch (Exception ignored) {
+            }
         } else if (s.startsWith("playsound ") && s.toLowerCase().endsWith(".wav")) {
             //PlaySound.play(s.replace("playsound ", ""));
         } else if (s.startsWith("stopsound")) {
             //PlaySound.d.stop();
             //TODO PlaySound.d = null;
-        }
-        else {
+        } else {
             System.out.println("[NEWS-WS] Unknown msg: " + s);
         }
 
@@ -108,7 +108,7 @@ public class SocketConnection extends WebSocketClient {
         pUtils.displayNormal("§c§l[N-CHAT] §a§oPeppi §7»§f§o Verbindung zum Server getrennt.");
 
         // 1006 = server offline gegangen
-        if(i == 1006)
+        if (i == 1006)
             newsAddon.ws_timeout = true;
 
         socket = null;
@@ -128,7 +128,7 @@ public class SocketConnection extends WebSocketClient {
     }
 
     public void s(String msg) {
-        if(socket.authenticated) {
+        if (socket.authenticated) {
             try {
                 socket.send(msg.replace("§TOKEN§", socket.token));
             } catch (WebsocketNotConnectedException ex) {

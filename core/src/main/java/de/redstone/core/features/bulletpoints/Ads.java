@@ -7,24 +7,24 @@ import net.labymod.api.client.entity.player.interaction.BulletPoint;
 import net.labymod.api.client.gui.icon.Icon;
 
 public class Ads implements BulletPoint {
-  private final NewsAddon newsAddon;
+    private final NewsAddon newsAddon;
 
-  public Ads(NewsAddon newsAddon) {
-    this.newsAddon = newsAddon;
-  }
+    public Ads(NewsAddon newsAddon) {
+        this.newsAddon = newsAddon;
+    }
 
-  @Override
-  public Component getTitle() {
-    return Component.text("§7[§aN§7]§f Werbearten");
-  }
+    @Override
+    public Component getTitle() {
+        return Component.text("§7[§aN§7]§f Werbearten");
+    }
 
-  @Override
-  public Icon getIcon() {
-    return null;
-  }
+    @Override
+    public Icon getIcon() {
+        return null;
+    }
 
-  @Override
-  public void execute(Player player) {
-    newsAddon.playerUtils.sendAsPlayerWithoutHistory("Welche Art von Werbung möchtest du schalten? Chatwerbung (350€), Actionbarwerbung (200€), Appwerbung (1120€) oder Zeitungswerbung?");
-  }
+    @Override
+    public void execute(Player player) {
+        newsAddon.playerUtils.sendAsPlayerWithoutHistory("Welche Art von Werbung möchtest du schalten? Chatwerbung (350€), Actionbarwerbung (200€), Appwerbung (1120€) oder Zeitungswerbung?");
+    }
 }

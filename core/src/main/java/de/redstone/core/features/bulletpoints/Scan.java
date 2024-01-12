@@ -7,24 +7,24 @@ import net.labymod.api.client.entity.player.interaction.BulletPoint;
 import net.labymod.api.client.gui.icon.Icon;
 
 public class Scan implements BulletPoint {
-  private final NewsAddon newsAddon;
+    private final NewsAddon newsAddon;
 
-  public Scan(NewsAddon newsAddon) {
-    this.newsAddon = newsAddon;
-  }
+    public Scan(NewsAddon newsAddon) {
+        this.newsAddon = newsAddon;
+    }
 
-  @Override
-  public Component getTitle() {
-    return Component.text("§7[§aN§7]§f Scan");
-  }
+    @Override
+    public Component getTitle() {
+        return Component.text("§7[§aN§7]§f Scan");
+    }
 
-  @Override
-  public Icon getIcon() {
-    return null;
-  }
+    @Override
+    public Icon getIcon() {
+        return null;
+    }
 
-  @Override
-  public void execute(Player player) {
-    newsAddon.playerUtils.sendAsPlayerWithoutHistory("/newsaddon scan "+ player.getName().toLowerCase());
-  }
+    @Override
+    public void execute(Player player) {
+        newsAddon.playerUtils.sendAsPlayerWithoutHistory("/newsaddon scan " + player.getName().toLowerCase());
+    }
 }

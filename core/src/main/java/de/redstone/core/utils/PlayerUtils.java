@@ -9,53 +9,53 @@ import net.labymod.api.client.options.ChatVisibility;
 
 public class PlayerUtils {
 
-  public String PREFIX = "§7[§a§lNEWS§r§7] §r";
-  private final NewsAddon addon;
+    private final NewsAddon addon;
+    public String PREFIX = "§7[§a§lNEWS§r§7] §r";
 
-  public PlayerUtils(NewsAddon addon) {
-    this.addon = addon;
-  }
-
-  public void displayNormal(String message) {
-    ChatMessage chatMessage = ChatMessage.builder()
-        .component(Component.text(message))
-        .visibility(ChatVisibility.SHOWN)
-        .build();
-    addon.labyAPI().chatProvider().chatController().addMessage(chatMessage);
-  }
-
-  public void displayPrefix(String message) {
-    ChatMessage chatMessage = ChatMessage.builder()
-        .component(Component.text(PREFIX + message))
-        .visibility(ChatVisibility.SHOWN)
-        .build();
-    addon.labyAPI().chatProvider().chatController().addMessage(chatMessage);
-  }
-
-  public void clickableCommand(String message, String command, boolean prefix) {
-    ChatMessage chatMessage;
-
-    if (prefix) {
-      chatMessage = ChatMessage.builder()
-          .component(Component.text(PREFIX + message)
-              .clickEvent(ClickEvent.suggestCommand(command))) // Add the click event
-          .visibility(ChatVisibility.SHOWN)
-          .build();
-    } else {
-      chatMessage = ChatMessage.builder()
-          .component(Component.text(message)
-              .clickEvent(ClickEvent.suggestCommand(command))) // Add the click event
-          .visibility(ChatVisibility.SHOWN)
-          .build();
+    public PlayerUtils(NewsAddon addon) {
+        this.addon = addon;
     }
-    addon.labyAPI().chatProvider().chatController().addMessage(chatMessage);
-  }
 
-  public void sendAsPlayer(String message) {
-    Laby.references().chatExecutor().chat(message);
-  }
+    public void displayNormal(String message) {
+        ChatMessage chatMessage = ChatMessage.builder()
+                .component(Component.text(message))
+                .visibility(ChatVisibility.SHOWN)
+                .build();
+        addon.labyAPI().chatProvider().chatController().addMessage(chatMessage);
+    }
 
-  public void sendAsPlayerWithoutHistory(String message) {
-    Laby.references().chatExecutor().chat(message, false);
-  }
+    public void displayPrefix(String message) {
+        ChatMessage chatMessage = ChatMessage.builder()
+                .component(Component.text(PREFIX + message))
+                .visibility(ChatVisibility.SHOWN)
+                .build();
+        addon.labyAPI().chatProvider().chatController().addMessage(chatMessage);
+    }
+
+    public void clickableCommand(String message, String command, boolean prefix) {
+        ChatMessage chatMessage;
+
+        if (prefix) {
+            chatMessage = ChatMessage.builder()
+                    .component(Component.text(PREFIX + message)
+                            .clickEvent(ClickEvent.suggestCommand(command))) // Add the click event
+                    .visibility(ChatVisibility.SHOWN)
+                    .build();
+        } else {
+            chatMessage = ChatMessage.builder()
+                    .component(Component.text(message)
+                            .clickEvent(ClickEvent.suggestCommand(command))) // Add the click event
+                    .visibility(ChatVisibility.SHOWN)
+                    .build();
+        }
+        addon.labyAPI().chatProvider().chatController().addMessage(chatMessage);
+    }
+
+    public void sendAsPlayer(String message) {
+        Laby.references().chatExecutor().chat(message);
+    }
+
+    public void sendAsPlayerWithoutHistory(String message) {
+        Laby.references().chatExecutor().chat(message, false);
+    }
 }

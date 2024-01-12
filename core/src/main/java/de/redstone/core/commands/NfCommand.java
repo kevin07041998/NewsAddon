@@ -7,6 +7,7 @@ import net.labymod.api.client.chat.command.Command;
 public class NfCommand extends Command {
     private final NewsAddon newsAddon;
     private final PlayerUtils playerUtils;
+
     public NfCommand(NewsAddon newsAddon) {
         super("nf");
 
