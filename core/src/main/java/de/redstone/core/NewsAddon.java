@@ -69,7 +69,7 @@ public class NewsAddon extends LabyAddon<NewsAddonConfiguration> {
         Laby.references().labyAPI().interactionMenuRegistry().register(this.scan = new Scan(this));
 
         Timer timer = new Timer();
-        timer.schedule(new WerbeTimer(this), 0, 10);
+        timer.schedule(new WerbeTimer(this), 0, 1000);
 
         this.registerSettingCategory();
         this.logger().info("Enabled the Addon");
